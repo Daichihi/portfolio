@@ -1,0 +1,224 @@
+@charset "utf-8";
+
+/*共通ここから*/
+body {
+    background-color: #EEEEEE;
+}
+header {
+    width: 100%;
+    height: 200px;
+    background-color:rgba(228, 227, 227, 0.9);
+    position: fixed;
+}
+header h1 {
+    opacity: 0.8;
+    float: right;
+    margin: 5px 30px 10px 10px;
+}
+.header_left {
+    padding: 30px; 
+    color: #6d6d6d;
+}
+.header_left p {
+    width: 250px;
+    font-size: 13px;
+}
+header h1 a:hover {
+    transition: opacity 2s;
+    opacity: 0.5;
+} 
+#global_navi {
+    writing-mode: vertical-rl;
+    float: right;
+}
+#global_navi ul {
+    list-style: none;
+    margin: 20px 30px 20px 10px;
+    overflow: hidden;
+}
+#global_navi ul li {
+    width: 30px;
+}
+#global_navi ul li a {
+    display: block;
+    padding: 1px;
+    color: #a3a3a3;
+    text-decoration: none;
+    transition: color 0.2s linear;
+}
+#global_navi ul li.current a {
+    color: #c9c9c9;
+}
+#global_navi ul li a:hover {
+    transition: color 1s;
+    color: #c7c7c7;
+}
+footer {
+    width: 100%;
+    height: 150px;
+    padding: 30px;
+    background-color: #BBBBBB;
+    text-align: center;
+}
+footer h3 {
+    margin: 30px;
+}
+#footer_text {
+    color: #7d7d7d;
+}
+footer small {
+    display: block;
+    padding: 8px 0;
+    color: #575757;
+}
+#wrapper {
+    padding: 300px 100px 300px 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#wrapper #page-title {
+    text-align: center;
+    margin: 0 0 100px 0;
+    
+}
+#wrapper a {
+    text-decoration: none;
+    color: black;
+    padding-right: 30px;
+    text-align: end
+}
+#wrapper #about a:hover {
+    color: dimgray;
+    transition: color 0.5s;
+}
+ol {
+    list-style: none;
+}
+/*共通ここまで*/
+
+/*indexここから*/
+#index #wrapper img {
+    width: 500px;  
+    height: 300px;
+    margin: 50px auto 100px auto;
+    border-radius: 10px;
+    overflow: hidden;
+    object-fit: cover;
+    object-position: auto 200px;
+}
+#index #wrapper article {
+    display: block;
+    writing-mode: vertical-rl;
+    width: 80%;
+    height: 250px;
+    overflow: hidden;
+    line-height: 1.8;
+    padding: 0 0 50px;
+    margin-right: 80%;
+}
+/*indexここまで*/
+
+/*aboutここから*/
+#about #gallery {
+    margin: 100px;
+}
+/*aboutここまで*/
+
+/*cookここから*/
+#cook #main {
+    width: 80%;
+}
+#cook #ingredient {
+background-color: #ffffff;
+width: 70%;
+text-align: center;
+border-radius: 30px;
+overflow: hidden;
+border: 5px solid #ccc;
+display: flex;
+justify-content: center;
+}
+#ingredient table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+#ingredient th {
+  display: none;
+}
+#ingredient td, 
+#ingredient th {
+  width: 50%;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+.step-container {
+  display: flex; /* 画像とテキストコンテンツを横並びにする */
+  align-items: flex-start; /* コンテナの開始位置（上端）に揃える */
+  gap: 20px; /* 画像とテキストコンテンツの間に隙間を作る */
+  margin-bottom: 40px; /* 各ステップ間のスペース */
+  padding: 20px;
+  border: 1px solid #eee; /* 見た目をわかりやすくするためのボーダー */
+  border-radius: 8px; /* 角を少し丸める */
+  background-color: #f9f9f9;
+}
+.step-container img {
+  max-width: 40%; /* 画像の最大幅を調整 */
+  height: auto; /* アスペクト比を維持 */
+  display: block; /* 画像の下にできる余白をなくす */
+}
+.step-content {
+  display: flex; /* h2とpを縦並びにする */
+  flex-direction: column; /* 縦方向に並べる */
+  justify-content: space-between; /* h2を上、pを下にする */
+  flex-grow: 1; /* 残りのスペースを全て占める */
+  min-height: 150px; /* 例えば、内容が少ない場合でも最低限の高さを確保 */
+  height: auto; /* img要素の高さに合わせるか、内容に合わせるか */
+}
+.step-content h2 {
+  margin-top: 0; /* デフォルトのマージンをリセット */
+  margin-bottom: 10px; /* h2とpの間に隙間 */
+  text-align: left;
+}
+.step-content p {
+  margin-bottom: 0; /* デフォルトのマージンをリセット */
+}
+/*cookここまで*/
+/*adminここから*/
+#admin article {
+  background-color: aliceblue;
+  border-radius: 30px;
+  padding: 10px;  
+  line-height: 2
+}
+#admin article h1 {
+display:flex; 
+justify-content:center;
+align-items: center;
+}
+img {
+  display: block;
+  margin: 0 auto;
+}
+/*adminここまで*/
+/*contactここから*/
+#contact .dammy {
+    color: rgba(255, 0, 0, 0.99);
+}
+#contact label {
+    font-size: 20px;
+}
+#contact .form {
+    display: flex; 
+    justify-content: center;
+}
+#contact .submit {
+  padding: 20px;
+  font-size: 20px;
+  display: block; /* ボタンをブロックレベル要素にする */
+  margin: 0 auto; /* 左右のマージンを自動にして中央に配置 */
+}
+
+
+/*contactここまで*/
