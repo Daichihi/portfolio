@@ -6,18 +6,40 @@ body {
 }
 header {
     width: 100%;
-    height: 200px;
+    height: 250px;
     background-color:rgba(228, 227, 227, 0.9);
-    position: fixed;
+    position: flex;
 }
-header h1 {
-    opacity: 0.8;
-    float: right;
-    margin: 5px 30px 10px 10px;
+.header_left img{
+    display: block;
+    margin: 0;
+}
+.header_left h2,img,p{
+    margin-top:0;
+    margin-bottom: 0;
 }
 .header_left {
-    padding: 30px; 
+    padding: 5px 0 0 20px; 
     color: #6d6d6d;
+}
+.header_right h1 {
+    opacity: 0.8;
+    float: right;
+    margin: 5px 5px 5px 5px;
+}
+.header_right {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+    position: fixed;
+    right: 20px;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+}
+.header_right.is-visible {
+    opacity: 1; /* 表示状態では完全に不透明 */
+    visibility: visible; /* 表示状態では見えるようにする */
 }
 .header_left p {
     width: 250px;
@@ -33,7 +55,7 @@ header h1 a:hover {
 }
 #global_navi ul {
     list-style: none;
-    margin: 20px 30px 20px 10px;
+    margin: 20px 20px 20px 20px;
     overflow: hidden;
 }
 #global_navi ul li {
