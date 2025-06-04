@@ -11,10 +11,10 @@ header {
     position: flex;
 }
 .header_left img{
-    display: block;
     margin: 0;
 }
 .header_left h2,img,p{
+    display: block;
     margin-top:0;
     margin-bottom: 0;
 }
