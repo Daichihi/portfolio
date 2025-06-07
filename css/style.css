@@ -140,6 +140,53 @@ footer small {
 ol {
     list-style: none;
 }
+.slider {
+	width: 100%;
+	height: 800px;
+	overflow: hidden;
+	position: relative;
+	max-width: 100%;
+}
+
+.slider img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+    object-position: center center;
+	z-index: 10;
+	opacity: 0;
+	animation-name: slide-fade;
+	animation-duration: 15s;
+	animation-iteration-count: infinite;
+}
+
+@keyframes slide-fade {
+	0%{
+		opacity: 0;
+	}
+	20%{
+		opacity: 1;
+	}
+	80%{
+		opacity: 0;
+	}
+	100%{
+		opacity: 0;
+		z-index: 0;
+	}
+}
+.slider img:first-of-type{
+	animation-delay: 0s;
+}
+.slider img:nth-of-type(2){
+	animation-delay: 5s;
+}
+.slider img:last-of-type{
+	animation-delay: 10s;
+}
 /*共通ここまで*/
 
 /*indexここから*/
@@ -156,8 +203,7 @@ ol {
 }
 .experience {
     max-width: 1600px;
-    width: 70%;
-    display: block;
+    width: 90vw;
     margin: auto;
     padding-top: 100px;
     font-size: 14px;
@@ -165,19 +211,20 @@ ol {
 }
 .experience-child {
     display: flex;
-}
-.experience-cook, 
-.experience-restaurant, 
-.experience-buy {
-    padding-right: 50px;
-    display: block;
+    flex-wrap: wrap;
 }
 .experience img {
-    width: 300px;
+    width: 27vw;
     height: 200px;
     margin-top: 20px;
     object-fit: cover;
     object-position: center center;
+}
+.experience-cook, 
+.experience-restaurant, 
+.experience-buy {
+    min-width: 280px;
+    padding-right: 3vw;
 }
 .experience a {
     text-decoration: none;
@@ -186,14 +233,40 @@ ol {
 .experience-cook:hover,
 .experience-restaurant:hover,
 .experience-buy:hover {
-    opacity: 0.7;
+    opacity: 0.5;
     transition: opacity 1s;
 }
 /*indexここまで*/
 
 /*aboutここから*/
+#map {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-top: 75%;
+}
+#map iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+@media screen and (max-width: 1100px) {
+#about #main {
+    width: 80vw;
+}
 #about #map {
-    margin: 100px;    
+    margin-top: 30px;
+}
+}
+@media screen and (max-width: 480px) {
+#about #main {
+    font-size: 13px;
+}
+    #about #map {
+    display: none;
+}
 }
 /*aboutここまで*/
 
@@ -292,57 +365,11 @@ align-items: center;
   border-radius: 30%;
   padding: 20px;
   font-size: 20px;
-  display: block; /* ボタンをブロックレベル要素にする */
-  margin: 0 auto; /* 左右のマージンを自動にして中央に配置 */
+  display: block;
+  margin: 0 auto;
 }
 /*contactここまで*/
 
 /*Testここから*/
-.slider {
-	width: 100%;
-	height: 800px;
-	overflow: hidden;
-	position: relative;
-	max-width: 100%;
-}
 
-.slider img {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-    object-position: center center;
-	z-index: 10;
-	opacity: 0;
-	animation-name: slide-fade;
-	animation-duration: 15s;
-	animation-iteration-count: infinite;
-}
-
-@keyframes slide-fade {
-	0%{
-		opacity: 0;
-	}
-	20%{
-		opacity: 1;
-	}
-	80%{
-		opacity: 0;
-	}
-	100%{
-		opacity: 0;
-		z-index: 0;
-	}
-}
-.slider img:first-of-type{
-	animation-delay: 0s;
-}
-.slider img:nth-of-type(2){
-	animation-delay: 5s;
-}
-.slider img:last-of-type{
-	animation-delay: 10s;
-}
 /*Testここまで*/
